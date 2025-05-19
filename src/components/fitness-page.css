@@ -1,0 +1,305 @@
+/* Additional styles for FitnessPage component */
+
+/* Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Base styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Enhanced header styling */
+.fitness-header {
+  background: linear-gradient(120deg, #1e40af 0%, #3b82f6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fitness-header:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.fitness-header > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Filters styling */
+.filter-button {
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-button:hover {
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Stats cards */
+.stats-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+}
+
+.stats-card:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.stats-card:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Trainer cards */
+.trainer-card {
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+}
+
+.trainer-specialty-badge {
+  transition: all 0.2s ease;
+}
+
+.trainer-card:hover .trainer-specialty-badge {
+  background-color: #1e40af;
+}
+
+.trainer-image-container {
+  overflow: hidden;
+}
+
+.trainer-image {
+  transition: all 0.5s ease;
+}
+
+.trainer-card:hover .trainer-image {
+  transform: scale(1.05);
+}
+
+.certification-tag {
+  transition: all 0.2s ease;
+}
+
+.certification-tag:hover {
+  background-color: #dbeafe;
+}
+
+.day-tag {
+  transition: all 0.2s ease;
+}
+
+.day-tag:hover {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* View schedule button */
+.schedule-button {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.schedule-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: left 0.7s ease;
+}
+
+.schedule-button:hover:before {
+  left: 100%;
+}
+
+/* Modal styling */
+.trainer-modal {
+  animation: fadeIn 0.3s ease;
+}
+
+.trainer-modal-content {
+  animation: slideUp 0.4s ease;
+  max-height: 85vh;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close-button {
+  transition: all 0.2s ease;
+  border-radius: 50%;
+}
+
+.modal-close-button:hover {
+  background-color: #f3f4f6;
+  transform: rotate(90deg);
+}
+
+/* Time slot styling */
+.time-slot {
+  transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+  background-color: #f8fafc;
+}
+
+.time-slot-book {
+  transition: all 0.2s ease;
+}
+
+.time-slot-book:hover {
+  background-color: #dbeafe;
+}
+
+/* Schedule consultation button */
+.consultation-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-button:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.consultation-button:hover:after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* Loading state for buttons */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter-button {
+    margin-bottom: 0.5rem;
+  }
+  
+  .trainer-modal-content {
+    padding: 1rem;
+  }
+}
+
+/* Accessibility improvements */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Success message */
+.booking-success {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #10b981;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* No results message */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px dashed #d1d5db;
+}

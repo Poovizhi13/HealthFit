@@ -1,0 +1,223 @@
+/* Additional styles for YogaPage component */
+
+/* Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Enhanced header styling */
+.yoga-header {
+  background: linear-gradient(135deg, #4fd1c5 0%, #319795 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover effects */
+.trainer-card {
+  transition: all 0.3s ease;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+}
+
+.trainer-card img {
+  transition: all 0.5s ease;
+}
+
+.trainer-card:hover img {
+  filter: brightness(1.05);
+}
+
+/* Button styles */
+.yoga-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.yoga-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.yoga-button:hover:after {
+  width: 200%;
+  height: 200%;
+}
+
+/* Modal animations */
+.trainer-modal {
+  animation: fadeIn 0.3s ease;
+}
+
+.trainer-modal-content {
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Day slots styling */
+.day-slot {
+  border-left: 3px solid #4fd1c5;
+  transition: all 0.2s ease;
+}
+
+.day-slot:hover {
+  background-color: #f0fdfb;
+}
+
+/* Time slots styling */
+.time-slot {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: #e6fffa;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #285e61;
+  transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+  background-color: #b2f5ea;
+  cursor: pointer;
+}
+
+/* Loading state for buttons */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .trainer-modal-content {
+    padding: 1rem;
+  }
+  
+  .time-slot {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Accessibility improvements */
+:focus {
+  outline: 2px solid #4fd1c5;
+  outline-offset: 2px;
+}
+
+/* Class for selected time slot */
+.time-slot.selected {
+  background-color: #38b2ac;
+  color: white;
+}
+
+/* Success notification */
+.success-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #48bb78;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.time-slot-button {
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.time-slot-button:hover {
+  border-color: #4fd1c5;
+  background-color: #f0fdfa;
+}
+
+.time-slot-button.selected {
+  background-color: #e6fffa;
+  border-color: #2dd4bf;
+  color: #0d9488;
+}
+
+.time-slot-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #e2e8f0;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 4px;
+}

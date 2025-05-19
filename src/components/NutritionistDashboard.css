@@ -1,0 +1,262 @@
+.nutritionist-dashboard {
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.dashboard-content {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.records-container {
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.records-container.with-notes {
+  flex: 0.6;
+}
+
+.notes-panel {
+  flex: 0.4;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.notes-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.notes-history {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.note-entry {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.note-metadata {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.note-content {
+  color: #333;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.new-note {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.new-note textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  resize: vertical;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+
+.save-note-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.save-note-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.save-note-btn:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+.view-notes-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-notes-btn:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.records-table th, .records-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.records-table th {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.records-table th:hover {
+  background-color: #e5e5e5;
+}
+
+.expanded-row td {
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.expanded-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.loading, .error {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+/* Notes Section Styling */
+.notes-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.notes-editor {
+  margin-top: 10px;
+}
+
+.notes-editor textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.notes-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.notes-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.notes-actions button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.notes-actions button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.notes-display {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notes-display p {
+  flex: 1;
+  margin: 0;
+  font-style: italic;
+}
+
+.notes-display button {
+  padding: 5px 10px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.success-message {
+  color: #4caf50;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-left: 10px;
+}
